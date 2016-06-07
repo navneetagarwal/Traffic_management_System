@@ -1,0 +1,29 @@
+Command line:
+   state_transition_4_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  57069
+
+Wed Apr  6 23:39:13 2016
+
+
+ Elaboration Time: 0.03 sec
+
+ Current Memory Usage: 195.899 Meg
+
+ Total Signals          : 14
+ Total Nets             : 57
+ Total Signal Drivers   : 7
+ Total Blocks           : 4
+ Total Primitive Blocks : 4
+ Total Processes        : 2
+ Total Traceable Variables  : 11
+ Total Scalar Nets and Variables : 436
+Total Line Count : 55
+
+ Total Simulation Time: 0.03 sec
+
+ Current Memory Usage: 271.401 Meg
+
+Wed Apr  6 23:39:19 2016
+

@@ -1,0 +1,2 @@
+vhdl isim_temp "dynamic_time_decider.vhd"
+vhdl isim_temp "tb_dynamic_time_decider.vhd"

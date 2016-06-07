@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/tanmay/Downloads/Project5-4-16/Project.xst" -ofn "/home/tanmay/Downloads/Project5-4-16/Project.syr" 

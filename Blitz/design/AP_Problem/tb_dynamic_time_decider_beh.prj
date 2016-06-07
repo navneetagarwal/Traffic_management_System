@@ -1,0 +1,2 @@
+vhdl work "dynamic_time_decider.vhd"
+vhdl work "tb_dynamic_time_decider.vhd"

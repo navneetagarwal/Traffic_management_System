@@ -1,0 +1,45 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/tanmay/Downloads/Project5-4-16/tb_Project_isim_beh.exe -prj /home/tanmay/Downloads/Project5-4-16/tb_Project_beh.prj work.tb_Project 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/state_transition_4.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/state_transition_32.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/state_transition_3.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/dynamic_time_decider_4.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/dynamic_time_decider_32.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/dynamic_time_decider_31.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/MarketGateJunction.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/MainGateJunction.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/HiranandaniJunction.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/random_number_generator.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/Blitz_top.vhd" into library work
+Parsing VHDL file "/home/tanmay/Downloads/Project5-4-16/tb_Project.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 98672 KB
+Fuse CPU Usage: 1370 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity random_number_generator [\random_number_generator(3)\]
+Compiling architecture arch of entity state_transition_3 [\state_transition_3(8)\]
+Compiling architecture behavioral of entity dynamic_time_decider_31 [\dynamic_time_decider_31(8,10)\]
+Compiling architecture behavioral of entity MarketGateJunction [\MarketGateJunction(8,10)\]
+Compiling architecture behavioral of entity state_transition_4 [\state_transition_4(8)\]
+Compiling architecture behavioral of entity dynamic_time_decider_4 [\dynamic_time_decider_4(8,10)\]
+Compiling architecture behavioral of entity MainGateJunction [\MainGateJunction(8,10)\]
+Compiling architecture arch of entity state_transition_32 [\state_transition_32(8)\]
+Compiling architecture behavioral of entity dynamic_time_decider_32 [\dynamic_time_decider_32(8,10)\]
+Compiling architecture behavioral of entity HiranandaniJunction [\HiranandaniJunction(8,10)\]
+Compiling architecture behavioral of entity Blitz_top [\Blitz_top(10,8)\]
+Compiling architecture behavior of entity tb_project
+Time Resolution for simulation is 1ps.
+Waiting for 5 sub-compilation(s) to finish...
+Compiled 28 VHDL Units
+Built simulation executable /home/tanmay/Downloads/Project5-4-16/tb_Project_isim_beh.exe
+Fuse Memory Usage: 675012 KB
+Fuse CPU Usage: 1550 ms
+GCC CPU Usage: 1150 ms

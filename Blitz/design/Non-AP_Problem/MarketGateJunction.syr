@@ -1,0 +1,516 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Reading design: MarketGateJunction.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "MarketGateJunction.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "MarketGateJunction"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg324
+
+---- Source Options
+Top Module Name                    : MarketGateJunction
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/sohum/Documents/CS254/Project/time_decider_3.vhd" into library work
+Parsing entity <time_decider_3>.
+Parsing architecture <Behavioral> of entity <time_decider_3>.
+Parsing VHDL file "/home/sohum/Documents/CS254/Project/state_transition_3.vhd" into library work
+Parsing entity <state_transition_3>.
+Parsing architecture <arch> of entity <state_transition_3>.
+Parsing VHDL file "/home/sohum/Documents/CS254/Project/MarketGateJunction.vhd" into library work
+Parsing entity <MarketGateJunction>.
+Parsing architecture <Behavioral> of entity <marketgatejunction>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <MarketGateJunction> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <state_transition_3> (architecture <arch>) with generics from library <work>.
+
+Elaborating entity <time_decider_3> (architecture <Behavioral>) with generics from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <MarketGateJunction>.
+    Related source file is "/home/sohum/Documents/CS254/Project/MarketGateJunction.vhd".
+        N = 8
+        M = 8
+WARNING:Xst:647 - Input <v> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <MarketGateJunction> synthesized.
+
+Synthesizing Unit <state_transition_3>.
+    Related source file is "/home/sohum/Documents/CS254/Project/state_transition_3.vhd".
+        N = 8
+    Found 2-bit register for signal <nextState>.
+    Found 8-bit register for signal <counter>.
+    Found 8-bit adder for signal <counter[7]_GND_6_o_add_0_OUT> created at line 67.
+    Found 8-bit adder for signal <counter[7]_GND_6_o_add_10_OUT> created at line 83.
+    Found 4x11-bit Read Only RAM for signal <_n0062>
+    Found 8-bit 4-to-1 multiplexer for signal <presentState[1]_GND_6_o_wide_mux_16_OUT> created at line 65.
+    Found 2-bit 4-to-1 multiplexer for signal <presentState[1]_GND_6_o_wide_mux_17_OUT> created at line 65.
+    Found 8-bit comparator greater for signal <counter[7]_t1[7]_LessThan_2_o> created at line 67
+    Found 8-bit comparator greater for signal <counter[7]_t2[7]_LessThan_7_o> created at line 75
+    Found 8-bit comparator greater for signal <counter[7]_t3[7]_LessThan_12_o> created at line 83
+    Summary:
+	inferred   1 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred  14 Multiplexer(s).
+Unit <state_transition_3> synthesized.
+
+Synthesizing Unit <time_decider_3>.
+    Related source file is "/home/sohum/Documents/CS254/Project/time_decider_3.vhd".
+        N = 8
+        M = 8
+WARNING:Xst:647 - Input <BS> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <t2>.
+    Found 8-bit register for signal <t3>.
+    Found 8-bit register for signal <t1>.
+    Found 1-bit register for signal <computed>.
+    Found 8-bit comparator lessequal for signal <n0003> created at line 65
+    Found 8-bit comparator lessequal for signal <n0005> created at line 65
+    Summary:
+	inferred  25 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <time_decider_3> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x11-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 2
+ 8-bit adder                                           : 2
+# Registers                                            : 6
+ 1-bit register                                        : 1
+ 2-bit register                                        : 1
+ 8-bit register                                        : 4
+# Comparators                                          : 5
+ 8-bit comparator greater                              : 3
+ 8-bit comparator lessequal                            : 2
+# Multiplexers                                         : 14
+ 1-bit 2-to-1 multiplexer                              : 2
+ 2-bit 2-to-1 multiplexer                              : 4
+ 2-bit 4-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <t2_2> in Unit <uut32> is equivalent to the following 6 FFs/Latches, which will be removed : <t2_3> <t3_2> <t3_3> <t1_3> <t1_4> <t1_5> 
+INFO:Xst:2261 - The FF/Latch <t2_0> in Unit <uut32> is equivalent to the following 14 FFs/Latches, which will be removed : <t2_1> <t2_4> <t2_5> <t2_6> <t2_7> <t3_0> <t3_1> <t3_4> <t3_5> <t3_6> <t3_7> <t1_0> <t1_1> <t1_7> 
+WARNING:Xst:1710 - FF/Latch <t2_0> (without init value) has a constant value of 0 in block <uut32>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <t2_2> (without init value) has a constant value of 1 in block <uut32>. This FF/Latch will be trimmed during the optimization process.
+
+Synthesizing (advanced) Unit <state_transition_3>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0062> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 11-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <nextState>     |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <state_transition_3> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x11-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 2
+ 8-bit adder                                           : 2
+# Registers                                            : 35
+ Flip-Flops                                            : 35
+# Comparators                                          : 5
+ 8-bit comparator greater                              : 3
+ 8-bit comparator lessequal                            : 2
+# Multiplexers                                         : 14
+ 1-bit 2-to-1 multiplexer                              : 2
+ 2-bit 2-to-1 multiplexer                              : 4
+ 2-bit 4-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 3
+ 8-bit 2-to-1 multiplexer                              : 3
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <t1_7> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t1_5> (without init value) has a constant value of 1 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t1_4> (without init value) has a constant value of 1 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t1_3> (without init value) has a constant value of 1 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t1_1> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t1_0> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t3_7> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t3_6> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t3_5> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t3_4> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t3_3> (without init value) has a constant value of 1 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t3_2> (without init value) has a constant value of 1 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t3_1> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t3_0> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t2_7> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t2_6> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t2_5> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t2_4> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t2_3> (without init value) has a constant value of 1 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t2_2> (without init value) has a constant value of 1 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t2_1> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <t2_0> (without init value) has a constant value of 0 in block <time_decider_3>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <MarketGateJunction> ...
+
+Optimizing unit <time_decider_3> ...
+
+Optimizing unit <state_transition_3> ...
+WARNING:Xst:1710 - FF/Latch <uut31/counter_7> (without init value) has a constant value of 0 in block <MarketGateJunction>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:3203 - The FF/Latch <uut32/t1_6> in Unit <MarketGateJunction> is the opposite to the following FF/Latch, which will be removed : <uut32/t1_2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block MarketGateJunction, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 11
+ Flip-Flops                                            : 11
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : MarketGateJunction.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 30
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 4
+#      LUT3                        : 4
+#      LUT4                        : 2
+#      LUT5                        : 1
+#      LUT6                        : 15
+#      MUXF7                       : 1
+#      VCC                         : 1
+# FlipFlops/Latches                : 11
+#      FDC                         : 9
+#      FDCE                        : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 24
+#      IBUF                        : 15
+#      OBUF                        : 9
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              11  out of  54576     0%  
+ Number of Slice LUTs:                   27  out of  27288     0%  
+    Number used as Logic:                27  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     27
+   Number with an unused Flip Flop:      16  out of     27    59%  
+   Number with an unused LUT:             0  out of     27     0%  
+   Number of fully used LUT-FF pairs:    11  out of     27    40%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          43
+ Number of bonded IOBs:                  25  out of    218    11%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 11    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.461ns (Maximum Frequency: 288.921MHz)
+   Minimum input arrival time before clock: 3.256ns
+   Maximum output required time after clock: 4.976ns
+   Maximum combinational path delay: 6.015ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.461ns (frequency: 288.921MHz)
+  Total number of paths / destination ports: 176 / 11
+-------------------------------------------------------------------------
+Delay:               3.461ns (Levels of Logic = 3)
+  Source:            uut31/counter_5 (FF)
+  Destination:       uut31/counter_6 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: uut31/counter_5 to uut31/counter_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              4   0.447   0.788  uut31/counter_5 (uut31/counter_5)
+     LUT2:I0->O            1   0.203   0.580  uut31/counter[7]_t1[7]_LessThan_2_o21_SW0 (N10)
+     LUT6:I5->O            9   0.205   0.934  uut31/counter[7]_t1[7]_LessThan_2_o21 (uut31/counter[7]_t1[7]_LessThan_2_o)
+     LUT6:I4->O            1   0.203   0.000  uut31/Mmux_presentState[1]_GND_6_o_wide_mux_16_OUT71 (uut31/presentState[1]_GND_6_o_wide_mux_16_OUT<6>)
+     FDC:D                     0.102          uut31/counter_6
+    ----------------------------------------
+    Total                      3.461ns (1.160ns logic, 2.301ns route)
+                                       (33.5% logic, 66.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 34 / 21
+-------------------------------------------------------------------------
+Offset:              3.256ns (Levels of Logic = 3)
+  Source:            BW<6> (PAD)
+  Destination:       uut32/t1_6 (FF)
+  Destination Clock: clk rising
+
+  Data Path: BW<6> to uut32/t1_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.944  BW_6_IBUF (BW_6_IBUF)
+     LUT6:I0->O            1   0.203   0.580  uut32/BW[7]_BE[7]_AND_2_o1 (uut32/BW[7]_BE[7]_AND_2_o1)
+     LUT6:I5->O            1   0.205   0.000  uut32/_n00391 (uut32/_n0039)
+     FDCE:D                    0.102          uut32/t1_6
+    ----------------------------------------
+    Total                      3.256ns (1.732ns logic, 1.524ns route)
+                                       (53.2% logic, 46.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 11 / 6
+-------------------------------------------------------------------------
+Offset:              4.976ns (Levels of Logic = 2)
+  Source:            uut31/nextState_0 (FF)
+  Destination:       s1<0> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: uut31/nextState_0 to s1<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             12   0.447   1.137  uut31/nextState_0 (uut31/nextState_0)
+     LUT3:I0->O            2   0.205   0.616  uut31/s3<2>1 (s1_0_OBUF)
+     OBUF:I->O                 2.571          s1_0_OBUF (s1<0>)
+    ----------------------------------------
+    Total                      4.976ns (3.223ns logic, 1.753ns route)
+                                       (64.8% logic, 35.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Delay:               6.015ns (Levels of Logic = 3)
+  Source:            rst (PAD)
+  Destination:       s2<2> (PAD)
+
+  Data Path: rst to s2<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            24   1.222   1.401  rst_IBUF (rst_IBUF)
+     LUT3:I0->O            2   0.205   0.616  uut31/s3<0>1 (s2_2_OBUF)
+     OBUF:I->O                 2.571          s2_2_OBUF (s2<2>)
+    ----------------------------------------
+    Total                      6.015ns (3.998ns logic, 2.017ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.461|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 9.78 secs
+ 
+--> 
+
+
+Total memory usage is 393012 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   27 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

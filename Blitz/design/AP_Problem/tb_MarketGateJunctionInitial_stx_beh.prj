@@ -1,0 +1,4 @@
+vhdl isim_temp "time_decider_3.vhd"
+vhdl isim_temp "state_transition_3.vhd"
+vhdl isim_temp "MarketGateJunction.vhd"
+vhdl isim_temp "tb_MarketGateJunctionInitial.vhd"

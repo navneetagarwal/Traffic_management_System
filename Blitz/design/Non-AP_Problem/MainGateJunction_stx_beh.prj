@@ -1,0 +1,3 @@
+vhdl isim_temp "time_decider_4.vhd"
+vhdl isim_temp "state_transition_4.vhd"
+vhdl isim_temp "MainGateJunction.vhd"
